@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>CapitalCity Template</title>
+  <meta name="generator" content="Bootply" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+      <link href="css/styles.css" rel="stylesheet">
+    </head>
+
+<style type="text/css">
+  .center {
+    text-align: center;
+    margin-top: 20px;
+}
+  .new {
+    text-align: center;
+    color: white;
+    font-style: bold;
+    margin-top: 200px;
+    margin-bottom: 200px;
+  }
+
+</style>
+
+
+    <body>
+
+      <div class="new">
+        <div>
+          <h1>POW Points</h1>
+          <p class="lead">Go Deep. Charge Hard.</p>
+          <div>&nbsp;</div>
+          <% if  current_user.present? %>
+
+          <% else %>
+          <a href="/users/sign_up" class="btn btn-lg btn-primary">Sign Up</a>
+          <a href="/users/sign_in" class="btn btn-lg btn-primary">Sign In</a>
+          <% end %>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="section_1" id="sec2">
+        <div class="section_1">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <h1>Game Features</h1>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-2 col-md-offset-3 text-center">
+              <div class="featurette-item">
+                <i class="icon-rocket"></i>
+                <h4>Collect Points</h4>
+                <p>Earn points every time you've tracked down fresh sheets.</p>
+              </div>
+            </div>
+            <div class="col-md-2 text-center">
+              <div class="featurette-item">
+                <i class="icon-magnet"></i>
+                <h4>Follow The Pros</h4>
+                <p>See if you can challenge the Pros on your accumulation of Gnar.</p>
+              </div>
+            </div>
+            <div class="col-md-2 text-center">
+              <div class="featurette-item">
+                <i class="icon-shield"></i>
+                <h4>Stay Tuned</h4>
+                <p>See which slopes are getting dumped on this season.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="section_1">
+
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3 text-center">
+            <h3>Featured Shredders</h3>
+            <br>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-4 col-sm-offset-2">
+           <div class="panel panel-default">
+             <div class="panel-heading text-center"><h2><i class="icon-chevron-left"></i>Pro</h2></div>
+
+             <div class="center"><img class="img-circle grayscale" src="http://snowbrains.com/wp-content/uploads/2015/02/Tanner_Hall_1_Headshot-3.jpg" width="200"></div>
+
+             <div class="panel-body text-center">His influence and impact on the ski industry is undeniable.  Tanner won 7 gold medals in the X-games 7 years in a row along with 4 silver medals in slopestyle, super pipe, and big air.vAfter 2 ferocious injuries, Tanner began focusing his energy on big mountain skiing.  He bought a cat skiing operation in Canada, Retallack, and has been exploring all it has to offer.  Tanner is just opening his next chapter and it promises to be a great one.
+              <div class="row">&nbsp;</div>
+              <a href="/users/sign_in" class="btn btn-lg btn-primary btn-block">Login To Follow</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+         <div class="panel panel-default">
+           <div class="panel-heading text-center"><h2>Amateur <i class="icon-chevron-right"></i></h2></div>
+
+           <div class="center"><img class="img-circle grayscale" width="200" src="https://scontent-ord1-1.xx.fbcdn.net/hphotos-xfa1/v/t1.0-9/1484324_10100396679966972_2872898953471940999_n.jpg?oh=d3d05b3c44b8f8eacd26bc094b532144&oe=55FE9A10"></div>
+
+           <div class="panel-body text-center">George is an avid skier from the East coast. Having roots in the great planes of Alberta he frequently headed West over the harsh Canadian winters to rip the backcountry in the Canadian Rockies. Favorite spot is Jackson Hole. The main reason for this was his epic decent down two of Jackson's most legendary lines: Zero G and Corbet's Couloir. It also helped having some classic Zeppelin injecting courage into his veins on the way up the tram.
+            <div class="row">&nbsp;</div>
+            <a href="/users/sing_up" class="btn btn-lg btn-primary btn-block">Sign Up To Compete</a>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <footer>
+    <div class="section_1">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3 text-center">
+          <ul class="list-inline">
+            <li><i class="icon-facebook icon-2x"></i></li>
+            <li><i class="icon-twitter icon-2x"></i></li>
+            <li><i class="icon-google-plus icon-2x"></i></li>
+            <li><i class="icon-pinterest icon-2x"></i></li>
+          </ul>
+          <hr>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- script references -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/scripts.js"></script>
+</body>
+</html>

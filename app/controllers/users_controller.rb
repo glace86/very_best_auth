@@ -14,6 +14,12 @@ class UsersController < ApplicationController
   def create
     @user = User.new
     @user.username = params[:username]
+    @user.password = params[:password]
+    @user.email = params[:email]
+    @user.pow_points = params[:pow_points]
+    @user.user_photo = params[:user_photo]
+    @user.pro = params[:pro]
+    @user.coast = params[:coast]
 
     if @user.save
       redirect_to "/users", :notice => "User created successfully."
@@ -30,6 +36,12 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     @user.username = params[:username]
+    @user.password = params[:password]
+    @user.email = params[:email]
+    @user.pow_points = params[:pow_points]
+    @user.user_photo = params[:user_photo]
+    @user.pro = params[:pro]
+    @user.coast = params[:coast]
 
     if @user.save
       redirect_to "/users", :notice => "User updated successfully."

@@ -1,47 +1,48 @@
 <div class="page-header">
   <h1>
-    Users
-    <a href="/users/new" class="btn btn-lg btn-success"><i class="fa fa-plus"></i></a>
+    Slopes
+    <a href="/slopes/new" class="btn btn-lg btn-success"><i class="fa fa-plus"></i></a>
   </h1>
 </div>
+
 
 <!-- Responsive, Isotope-based layout example -->
 
 <div class="row">
   <div class="col-xs-12">
-    <input type="text" id="quicksearch" placeholder="Search Users (start typing)" class="form-control">
+    <input type="text" id="quicksearch" placeholder="Search Slopes (start typing)" class="form-control">
   </div>
 </div>
 
 <hr>
 
 <div class="row isotope-container">
-<% @users.each do |user| %>
+<% @slope.each do |slope| %>
   <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 isotope-item">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title"><%= user.username %></h3>
+        <h3 class="panel-title"><%= slope.name %></h3>
       </div>
       <div class="panel-body">
         <dl>
-          <dt><%= user.pow_points %>pts</dt>
+          <dt><%= slope.town %>, <%= slope.state %></dt>
+          <dd><%= slope.pow_points %></dd>
 
-          <dt><img class="image-circle" src="<%= user.user_photo %>" length="200" width="200"></dt>
+          <div class="center"><img src="<%= slope.pic %>"  height="200" width="200"></div>
 
         </dl>
         <div class="btn-group btn-group-justified">
-          <a href="/users/<%= user.id %>" class="btn btn-primary">
+          <a href="/slopes/<%= slope.id %>" class="btn btn-primary">
             <i class="fa fa-search-plus"></i>
           </a>
 
-          <a href="/users/<%= user.id %>/edit" class="btn btn-warning">
+          <a href="/slopes/<%= slope.id %>/edit" class="btn btn-warning">
             <i class="fa fa-edit"></i>
           </a>
 
-          <a href="/delete_user/<%= user.id %>" class="btn btn-danger" rel="nofollow">
+          <a href="/delete_slope/<%= slope.id %>" class="btn btn-danger" rel="nofollow">
             <i class="fa fa-trash-o"></i>
           </a>
-
         </div>
       </div>
     </div>

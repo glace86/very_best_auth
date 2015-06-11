@@ -1,57 +1,31 @@
 Rails.application.routes.draw do
 
-  # Routes for the Venue resource:
+  devise_for :views
+  devise_for :users
+
+  #Route for landing page
+  get "/landing", :controller => "landing", :action => "frontpage"
+
+
+  # Routes for the slope (i.e. key resorts):
   # CREATE
-  get "/venues/new", :controller => "venues", :action => "new"
-  post "/create_venue", :controller => "venues", :action => "create"
+  get "/slopes/new", :controller => "slopes", :action => "new"
+  post "/create_slope", :controller => "slopes", :action => "create"
 
   # READ
-  get "/venues", :controller => "venues", :action => "index"
-  get "/venues/:id", :controller => "venues", :action => "show"
+  get "/slopes", :controller => "slopes", :action => "index"
+  get "/slopes/:id", :controller => "slopes", :action => "show"
 
   # UPDATE
-  get "/venues/:id/edit", :controller => "venues", :action => "edit"
-  post "/update_venue/:id", :controller => "venues", :action => "update"
+  get "/slopes/:id/edit", :controller => "slopes", :action => "edit"
+  post "/update_slope/:id", :controller => "slopes", :action => "update"
 
   # DELETE
-  get "/delete_venue/:id", :controller => "venues", :action => "destroy"
+  get "/delete_slope/:id", :controller => "slopes", :action => "destroy"
   #------------------------------
 
   root "favorites#index"
 
-  # Routes for the Neighborhood resource:
-  # CREATE
-  get "/neighborhoods/new", :controller => "neighborhoods", :action => "new"
-  post "/create_neighborhood", :controller => "neighborhoods", :action => "create"
-
-  # READ
-  get "/neighborhoods", :controller => "neighborhoods", :action => "index"
-  get "/neighborhoods/:id", :controller => "neighborhoods", :action => "show"
-
-  # UPDATE
-  get "/neighborhoods/:id/edit", :controller => "neighborhoods", :action => "edit"
-  post "/update_neighborhood/:id", :controller => "neighborhoods", :action => "update"
-
-  # DELETE
-  get "/delete_neighborhood/:id", :controller => "neighborhoods", :action => "destroy"
-  #------------------------------
-
-  # Routes for the Dish resource:
-  # CREATE
-  get "/dishes/new", :controller => "dishes", :action => "new"
-  post "/create_dish", :controller => "dishes", :action => "create"
-
-  # READ
-  get "/dishes", :controller => "dishes", :action => "index"
-  get "/dishes/:id", :controller => "dishes", :action => "show"
-
-  # UPDATE
-  get "/dishes/:id/edit", :controller => "dishes", :action => "edit"
-  post "/update_dish/:id", :controller => "dishes", :action => "update"
-
-  # DELETE
-  get "/delete_dish/:id", :controller => "dishes", :action => "destroy"
-  #------------------------------
 
   # Routes for the User resource:
   # CREATE
@@ -70,22 +44,6 @@ Rails.application.routes.draw do
   get "/delete_user/:id", :controller => "users", :action => "destroy"
   #------------------------------
 
-  # Routes for the Cuisine resource:
-  # CREATE
-  get "/cuisines/new", :controller => "cuisines", :action => "new"
-  post "/create_cuisine", :controller => "cuisines", :action => "create"
-
-  # READ
-  get "/cuisines", :controller => "cuisines", :action => "index"
-  get "/cuisines/:id", :controller => "cuisines", :action => "show"
-
-  # UPDATE
-  get "/cuisines/:id/edit", :controller => "cuisines", :action => "edit"
-  post "/update_cuisine/:id", :controller => "cuisines", :action => "update"
-
-  # DELETE
-  get "/delete_cuisine/:id", :controller => "cuisines", :action => "destroy"
-  #------------------------------
 
   # Routes for the Favorite resource:
   # CREATE
@@ -103,5 +61,10 @@ Rails.application.routes.draw do
   # DELETE
   get "/delete_favorite/:id", :controller => "favorites", :action => "destroy"
   #------------------------------
+
+  # Routes for Dashboard (getting POW POINTS):
+  get "dashboard/power", :controller => "dashboard", :action => "power"
+  get "dashboard/powerup/:id", :controller => "dashboard", :action => "powerup"
+
 
 end

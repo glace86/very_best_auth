@@ -1,0 +1,140 @@
+<style type="text/css">
+  .center {
+    text-align: center;
+    margin-top: 20px;
+}
+  .new {
+    text-align: center;
+    color: white;
+    font-style: bold;
+    margin-top: 200px;
+    margin-bottom: 200px;
+  }
+
+</style>
+
+<div class="page-header">
+  <h1>
+    Leader Board
+  </h1>
+</div>
+
+<!-- Responsive, Isotope-based layout example -->
+
+<div class="center">
+
+
+  <p><font size="15">GET POINTS <%= @you.username %>!</font></p>
+  <p><font>Click the button to retreive coordinates...</font></p>
+  <button class="btn-group" onclick="getLocation()">Retrieve</button>
+
+  <p id="demo"></p>
+
+  <script>
+    var x = document.getElementById("demo");
+
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+      }
+    }
+
+    function showPosition(position) {
+      x.innerHTML = "Latitude: " + position.coords.latitude +
+      "<br>Longitude: " + position.coords.longitude;
+    }
+  </script>
+
+  <div class="center col-2">
+    <div class="panel panel-default col-4">
+      <div class="panel-heading">
+      <h3 class="panel-title"><%= @you.username %></h3>
+      </div>
+
+      <div class="panel-body">
+
+        <div class="center"><img class="img-circle grayscale" src="<%= @you.user_photo %>" width="200" height="200"></div>
+
+        <div class="center">
+          <font size="20"><%= @you.pow_points %>pts</font>
+        </div>
+
+        <div class="btn-group btn-group-justified">
+          <a href="/dashboard/powerup/<%= @you.id%>" class="btn btn-primary btn btn-success">
+            GET YOUR POINTS
+          </a>
+        </div>
+
+        <div class="btn-group btn-group-justified">
+          <a href="/users/<%= @you.id%>" class="btn btn-primary">
+            <i class="fa fa-search-plus"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+<hr>
+
+<div class="row isotope-container">
+<% @users.each do |user| %>
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 isotope-item">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= user.username %></h3>
+      </div>
+
+      <div class="panel-body">
+
+        <div class="center"><img class="img-circle grayscale" src="<%= user.user_photo %>" width="200" height="200"></div>
+
+        <div class="center">
+          <font size="20"><%= user.pow_points %>pts</font>
+        </div>
+
+        <div class="btn-group btn-group-justified">
+          <a href="/users/<%= user.id %>" class="btn btn-primary">
+            <i class="fa fa-search-plus"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>
+
+<hr>
+
+<div class="row isotope-container">
+<% @slope.each do |slope| %>
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 isotope-item">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= slope.name %></h3>
+      </div>
+      <div class="panel-body">
+        <dl>
+          <dt><%= slope.town %>, <%= slope.state %></dt>
+
+
+          <div class="center"><img src="<%= slope.pic %>"  height="200" width="200"></div>
+
+        </dl>
+
+        <div class="center"><font size="20"><%= slope.pow_points %>pts</font></div>
+
+        <div class="btn-group btn-group-justified">
+          <a href="/slopes/<%= slope.id %>" class="btn btn-primary">
+            <i class="fa fa-search-plus"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>
